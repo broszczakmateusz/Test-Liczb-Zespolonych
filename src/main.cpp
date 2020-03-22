@@ -5,14 +5,10 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    extern LZespolona Liczba;
+    LZespolona L1;
 
-   /* LZespolona L2;
-    L2.re = 2;
-    L2.im = 3;*/
-
-   Liczba = Wczytaj();
-   Wyswietl(Liczba);
+    cin >> L1;
+    cout << L1;
 
     
 

@@ -1,6 +1,7 @@
 #ifndef LZESPOLONA_HH
 #define LZESPOLONA_HH
 
+#include <iostream>
 /*!
  *  Plik zawiera definicje struktury LZesplona oraz zapowiedzi
  *  przeciazen operatorow arytmetycznych dzialajacych na tej 
@@ -19,7 +20,10 @@ struct  LZespolona {
 
 LZespolona Utworz (double, double);
 LZespolona Wczytaj (void);
-void Wyswietl(LZespolona);
+//void WczytajL(LZespolona &);
+std::istream & operator >> (std::istream & str, LZespolona &);
+std::ostream & operator << (std::ostream & str, LZespolona out);
+//void Wyswietl(LZespolona);
 
 /*
   Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow

@@ -35,11 +35,34 @@ LZespolona Wczytaj() {
 }
 
 /*!
+ *  Wczytuje ze standardowego wejscia liczbe zespoloną
+ * */
+std::istream & operator >> (std::istream & str, LZespolona &in) {
+
+    char znak;
+    str >> znak;
+    if (znak != '(') {
+        str.setstate(std::ios::failbit);
+    }
+    str >> in.re;
+    str >> in.im;
+    str >> znak;
+    if (znak != 'i') {
+        str.setstate(std::ios::failbit);
+    }
+    str >> znak;
+    if (znak != ')') {
+        str.setstate(std::ios::failbit);
+    }
+}
+
+/*!
  * Wyswietla liczbę zespolona na standardoe wyjscie w postaci (0+0i)
  */
-void Wyswietl(LZespolona Liczba) {
 
-  cout<< "("<< Liczba.re << std::showpos << Liczba.im << std::noshowpos << "i)";
+std::ostream & operator << (std::ostream & str, LZespolona out) {
+
+  str << "(" << out.re << std::showpos << out.im << std::noshowpos << "i)";
 }
 
 /*!
