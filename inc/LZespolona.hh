@@ -20,10 +20,9 @@ struct  LZespolona {
 
 LZespolona Utworz (double, double);
 LZespolona Wczytaj (void);
-//void WczytajL(LZespolona &);
 std::istream & operator >> (std::istream & str, LZespolona &);
-std::ostream & operator << (std::ostream & str, LZespolona out);
-//void Wyswietl(LZespolona);
+std::ostream & operator << (std::ostream & str, const LZespolona &out);
+
 
 /*
   Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow

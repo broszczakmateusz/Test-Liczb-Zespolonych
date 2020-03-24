@@ -5,23 +5,8 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    LZespolona L1;
 
-    cin >> L1;
-    cout << L1;
-
-    
-
-
-
-
-
-
-
-
-
-    
-  /* if (argc < 2) {
+ if (argc < 2) {
     cout << endl;
     cout << " Brak opcji okreslajacej rodzaj testu." << endl;
     cout << " Dopuszczalne nazwy to:  latwy, trudny." << endl;
@@ -51,6 +36,6 @@ int main(int argc, char **argv)
   
   cout << endl;
   cout << " Koniec testu" << endl;
-  cout << endl;*/
+  cout << endl;
 
 }

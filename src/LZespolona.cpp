@@ -60,7 +60,7 @@ std::istream & operator >> (std::istream & str, LZespolona &in) {
  * Wyswietla liczbę zespolona na standardoe wyjscie w postaci (0+0i)
  */
 
-std::ostream & operator << (std::ostream & str, LZespolona out) {
+std::ostream & operator << (std::ostream & str, const LZespolona &out) {
 
   str << "(" << out.re << std::showpos << out.im << std::noshowpos << "i)";
 }
@@ -131,17 +131,22 @@ LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2)
  */
 LZespolona  operator / (LZespolona  Skl1,  LZespolona  Skl2) {
 
-    LZespolona  Sprzerzona, Wynik;
+    LZespolona Sprzerzona, Wynik;
     double modul2;
 
     Sprzerzona = Sprzerzenie(Skl2);
     modul2 = Modul2(Skl2);
-
-    Wynik.re = (Skl1.re * Sprzerzona.re - Skl1.im * Sprzerzona.im) / modul2;
-    Wynik.im = (Skl1.re * Sprzerzona.im + Skl1.im * Sprzerzona.re) / modul2;
-
-    return Wynik;
+    if (modul2 != 0) {
+        Wynik.re = (Skl1.re * Sprzerzona.re - Skl1.im * Sprzerzona.im) / modul2;
+        Wynik.im = (Skl1.re * Sprzerzona.im + Skl1.im * Sprzerzona.re) / modul2;
+        return Wynik;
+    }
+    else {
+        std::cerr << "Nie dziel przez 0";
+        exit(1);
+    }
 }
+
 
 bool operator == (LZespolona  L1,  LZespolona  L2) {
     if ((L1.re == L2.re) && (L1.im == L2.im))
@@ -151,10 +156,7 @@ bool operator == (LZespolona  L1,  LZespolona  L2) {
 }
 
 bool operator != (LZespolona  L1,  LZespolona  L2) {
-    if ((L1.re == L2.re) && (L1.im == L2.im))
-        return false;
-    else
-        return true;
+    return !(L1 == L2);
 }
 
 LZespolona Sprzerzenie (LZespolona Liczba)  {

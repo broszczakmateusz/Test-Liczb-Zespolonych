@@ -1,5 +1,5 @@
-#include "WyrazenieZesp.hh"
 #include <iostream>
+#include "WyrazenieZesp.hh"
 
 using std::cout;
 /*
@@ -7,8 +7,8 @@ using std::cout;
  * w pliku naglowkowym.
  */
 
-std::ostream & operator << (std::ostream & str, WyrazenieZesp out) {
-    cout << out.Arg1;
+std::ostream & operator << (std::ostream & str, const WyrazenieZesp &out) {
+    str << out.Arg1;
     switch (out.Op) {
         case Op_Dodaj:
             cout << "+";
@@ -23,7 +23,7 @@ std::ostream & operator << (std::ostream & str, WyrazenieZesp out) {
             cout << "/";
             break;
     }
-    cout << out.Arg2;
+    str << out.Arg2;
 }
 
 LZespolona Oblicz(WyrazenieZesp  WyrZ) {
