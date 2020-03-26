@@ -2,8 +2,8 @@
 #define Z2_STATYSTYKA_H
 
 struct  Statystyka {
-    int  popr;    /*! Pole repezentuje ilosc poprawnych odpowiedzi. */
-    int  wszystkie;    /*! Pole repezentuje ilosc wysztskich odpowiedzi. */
+    int  popr = 0;    /*! Pole repezentuje ilosc poprawnych odpowiedzi. */
+    int  wszystkie = 0;    /*! Pole repezentuje ilosc wysztskich odpowiedzi. */
 };
 
 void Dodaj_popr ( Statystyka &Stat);
