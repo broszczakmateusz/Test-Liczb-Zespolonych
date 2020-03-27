@@ -8,7 +8,6 @@
  *  strukturze.
  */
 
-
 /*!
  * Modeluje pojecie liczby zespolonej
  */
@@ -17,18 +16,15 @@ struct  LZespolona {
   double   im;    /*! Pole repezentuje czesc urojona. */
 };
 
-
-LZespolona Utworz (double, double);
-LZespolona Wczytaj (void);
-std::istream & operator >> (std::istream & str, LZespolona &);
-std::ostream & operator << (std::ostream & str, const LZespolona &out);
-
+//LZespolona Utworz (double, double);
+//LZespolona Wczytaj (void);
 
 /*
   Dalej powinny pojawic sie zapowiedzi definicji przeciazen operatorow
  */
 
-
+std::istream & operator >> (std::istream & str, LZespolona &);
+std::ostream & operator << (std::ostream & str, const LZespolona &out);
 LZespolona  operator + (LZespolona  Skl1,  LZespolona  Skl2);
 LZespolona  operator - (LZespolona  Skl1,  LZespolona  Skl2);
 LZespolona  operator * (LZespolona  Skl1,  LZespolona  Skl2);

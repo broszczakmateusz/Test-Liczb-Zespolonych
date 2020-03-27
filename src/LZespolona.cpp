@@ -1,39 +1,6 @@
 #include <iostream>
 #include "LZespolona.hh"
 
-using std::cout;
-using std::cin;
-
-LZespolona Liczba;
-
-/*!
- * Tworzy liczbę zespoloną żłożoną z części rzeczywistej i części urojonej
- * Argumenty:
- *   re - część rzeczywista
- *   im - część urojona
- * Zwraca:
- *   Strukturę liczby zespolonej
- * */
-LZespolona Utworz (double re, double im) {
-
-    Liczba.re = re;
-    Liczba.im = im;
-
-    return Liczba;
-}
-
-/*!
- *  Wczytuje dwie wartosci double ze standardowego wejscia i zwraca je jako liczbe zespoloną
- * */
-LZespolona Wczytaj() {
-
-    double re, im;
-
-    cin >> re >> im;
-
-    return Utworz(re,im);
-}
-
 /*!
  *  Wczytuje ze standardowego wejscia liczbe zespoloną
  * */
@@ -175,3 +142,30 @@ double Modul2(LZespolona Liczba)  {
 
     return modul2;
 }
+/*!
+ * Tworzy liczbę zespoloną żłożoną z części rzeczywistej i części urojonej
+ * Argumenty:
+ *   re - część rzeczywista
+ *   im - część urojona
+ * Zwraca:
+ *   Strukturę liczby zespolonej
+ * */
+/*LZespolona Utworz (double re, double im) {
+
+    Liczba.re = re;
+    Liczba.im = im;
+
+    return Liczba;
+}*/
+
+/*!
+ *  Wczytuje dwie wartosci double ze standardowego wejscia i zwraca je jako liczbe zespoloną
+ * */
+/*LZespolona Wczytaj() {
+
+    double re, im;
+
+    cin >> re >> im;
+
+    return Utworz(re,im);
+}*/

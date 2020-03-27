@@ -21,7 +21,6 @@ cerr << " Inicjalizacja testu nie powiodla sie." << endl;
 return 1;
 }
 
-
 cout << endl;
 cout << " Start testu arytmetyki zespolonej: " << argv[1] << endl;
 cout << endl;
@@ -29,7 +28,7 @@ cout << endl;
 WyrazenieZesp   WyrZ_PytanieTestowe;
 LZespolona PoprawnyWynik, Odp;
 Statystyka Stat;
-int a = 1;
+int LicznikBledow = 1;
 
 while (PobierzNastpnePytanie(&BazaT,&WyrZ_PytanieTestowe)) {
 
@@ -43,11 +42,11 @@ cin >> Odp;
         if (!cin.good()) {
             cout << " :! Blad zapisu liczby zespolonej. Sprobuj jeszcze raz. " ;
             cin.clear();
-            a++;
+            LicznikBledow++;
             cin >> Odp;
 
         } else {
-            a = 1;
+            LicznikBledow = 1;
             PoprawnyWynik = Oblicz(WyrZ_PytanieTestowe);
 
             if (Odp == PoprawnyWynik) {
@@ -58,22 +57,17 @@ cin >> Odp;
             }
             break;
         }
-
-
-} while (a <= 3);
+} while (LicznikBledow <= 3);
     Dodaj_wszystkie(Stat);
 }
 
-
-
 double ProcentPopr;
 
-cout << endl;
 cout << " Koniec testu" << endl;
-cout << "Ilosc dobrych odpowiedzi: " << Stat.popr << endl;
-cout << "Ilosc blednych odpowiedzi: " << Stat.wszystkie - Stat.popr << endl;
+cout << " Ilosc dobrych odpowiedzi: " << Stat.popr << endl;
+cout << " Ilosc blednych odpowiedzi: " << Stat.wszystkie - Stat.popr << endl;
 ProcentPopr = (double) (Stat.popr *100) / Stat.wszystkie;
-cout << "Wynik procentowy poprawnych odpowiedzi: " << ProcentPopr << "%";
-cout << endl;
+cout << " Wynik procentowy poprawnych odpowiedzi: " << ProcentPopr << "%";
+
 
 }

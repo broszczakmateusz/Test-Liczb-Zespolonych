@@ -21,10 +21,10 @@ static WyrazenieZesp  TestLatwy[] =
  * Zawiera ona tresc trudnego testu.
  */
 static WyrazenieZesp  TestTrudny[] =
-        { {{2,1}, Op_Dodaj, {1,2}},
-          {{1,0}, Op_Odejmij, {0,1}},
-          {{3,0}, Op_Mnoz, {0,3}},
-          {{4,8}, Op_Dziel, {1,0}},
+        { {{3.4,2.3}, Op_Dodaj, {2.1,2.5}},
+          {{1.3,0.7}, Op_Odejmij, {0.2,1.3}},
+          {{3.5,2.4}, Op_Mnoz, {0.1,5.3}},
+          {{4.2,1}, Op_Dziel, {1,3}},
         };
 
 
